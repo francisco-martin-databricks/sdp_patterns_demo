@@ -1,0 +1,15 @@
+resources:
+  jobs:
+    generate_subscriptions:
+      name: generate_subscriptions
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+        - name: num_records
+          default: "10000"
+      tasks:
+        - task_key: generate
+          notebook_task:
+            notebook_path: ../src/generate_subscriptions.py

@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    sdp_patterns_demo:
+      name: sdp_patterns_demo
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      continuous: false
+      root_path: ../src
+      libraries:
+        - glob:
+            include: ../src/transformations/**
+      configuration:
+        source_path: /Volumes/${var.catalog}/${var.schema}/raw/subscriptions

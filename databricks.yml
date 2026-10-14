@@ -1,0 +1,17 @@
+bundle:
+  name: sdp_patterns_demo
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Catalog for the demo volume and tables
+  schema:
+    description: Schema for the demo volume and tables
+    default: sdp_demo
+
+targets:
+  dev:
+    mode: development
+    default: true
