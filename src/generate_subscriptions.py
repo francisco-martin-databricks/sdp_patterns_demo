@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # Generate sample subscription data
 # MAGIC Lands one batch of subscription change events as JSON in `/Volumes/<catalog>/<schema>/raw/subscriptions`.
@@ -9,6 +13,8 @@
 dbutils.widgets.text("catalog", "")
 dbutils.widgets.text("schema", "sdp_demo")
 dbutils.widgets.text("num_records", "10000")
+
+# COMMAND ----------
 
 MAX_RECORDS = 1_000_000
 
